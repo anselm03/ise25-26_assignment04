@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
  * @param name        the name of the POS
  * @param description a description of the POS
  * @param type        the type of POS (cafe, bakery, etc.)
- * @param campus      the campus location
+ * @param campus      the campus location; null if postal code cannot be mapped to a campus
  * @param street      street name
  * @param houseNumber house number (may include suffix such as "21a")
  * @param postalCode  postal code
@@ -33,7 +33,7 @@ public record Pos(
         @NonNull String name,
         @NonNull String description,
         @NonNull PosType type,
-        @NonNull CampusType campus,
+        @Nullable CampusType campus,
         @NonNull String street,
         @NonNull String houseNumber,
         @NonNull Integer postalCode,
